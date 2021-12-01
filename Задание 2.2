@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace windowsform
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {   int d31 = 31;
+            int d30 = 30;
+            int d28 = 28;
+            string x = textBox1.Text;
+            int MonthNomber = Convert.ToInt32(x);
+
+            string y = textBox2.Text;
+            int DayNomber = Convert.ToInt32(y);
+
+            switch (MonthNomber)
+            {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12: textBox3.Text = Convert.ToString(d31 - DayNomber); break;
+                case 4: case 6: case 9: case 11: textBox3.Text = Convert.ToString(d30 - DayNomber); break;
+                case 2: textBox3.Text = Convert.ToString(d28 - DayNomber); break;
+            }
+
+            Console.Read();
+        }
+
+            static public int GetDays(int MonthDays, int DayNomber)
+            {
+                return MonthDays - DayNomber;
+
+            }
+        
+    }
+}
